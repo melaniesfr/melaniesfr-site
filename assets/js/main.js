@@ -23,8 +23,8 @@ if (navClose) {
 const navLink = document.querySelectorAll('.nav_link');
 
 function linkAction() {
-  const navMenu = document.getElementById('nav-menu');
-  navMenu.classList.remove('show-menu');
+  const navMenus = document.getElementById('nav-menu');
+  navMenus.classList.remove('show-menu');
 }
 
 navLink.forEach(n => n.addEventListener('click', linkAction));
@@ -36,7 +36,7 @@ const skillsContent = document.getElementsByClassName('skills_content'),
 function toggleSkills() {
   let itemClass = this.parentNode.className;
 
-  for (i = 0; i < skillsContent.length; i++) {
+  for (let i = 0; i < skillsContent.length; i++) {
     skillsContent[i].className = 'skills_content skills_close';
   }
 
@@ -63,8 +63,8 @@ tabs.forEach(tab => {
 
     target.classList.add('qualification_active');
 
-    tabs.forEach(tab => {
-      tab.classList.remove('qualification_active');
+    tabs.forEach(tabOne => {
+      tabOne.classList.remove('qualification_active');
     });
 
     tab.classList.add('qualification_active');
@@ -126,12 +126,50 @@ let swiperTestimonial = new Swiper('.testimonial_container', {
 });
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+const sections = document.querySelectorAll('section[id]');
 
+function scrollActive() {
+  const scrollY = window.pageYOffset;
+
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 50;
+    const sectionId = current.getAttribute('id');
+
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      document.querySelector('.nav_menu a[href*=' + sectionId + ']').classList.add('active-link');
+    } else {
+      document.querySelector('.nav_menu a[href*=' + sectionId + ']').classList.remove('active-link');
+    }
+  });
+}
+
+window.addEventListener('scroll', scrollActive);
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/ 
+function scrollHeader() {
+  const nav = document.getElementById('header');
 
+  if (this.scrollY >= 80) {
+    nav.classList.add('scroll-header');
+  } else {
+    nav.classList.remove('scroll-header');
+  }
+}
+
+window.addEventListener('scroll', scrollHeader);
 
 /*==================== SHOW SCROLL UP ====================*/ 
+function scrollUp() {
+  const scrollUps = document.getElementById('scroll-up');
 
+  if (this.scrollY >= 560) {
+    scrollUps.classList.add('show-scroll');
+  } else {
+    scrollUps.classList.remove('show-scroll');
+  }
+}
 
-/*==================== DARK LIGHT THEME ====================*/ 
+window.addEventListener('scroll', scrollUp);
+
+/*==================== DARK LIGHT THEME ====================*/

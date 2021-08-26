@@ -232,10 +232,14 @@ img {
 }
 
 /* Active link */
-
+.active-link {
+  color: var(--first-color);
+}
 
 /* Change background header */
-
+.scroll-header {
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+}
 
 /*==================== HOME ====================*/
 .home_container {
@@ -807,16 +811,132 @@ img {
 }
 
 /*==================== CONTACT ME ====================*/
+.contact_container {
+  row-gap: 3rem;
+}
 
+.contact_information {
+  display: flex;
+  margin-bottom: var(--mb-2);
+}
+
+.contact_icon {
+  font-size: 2rem;
+  color: var(--first-color);
+  margin-right: var(--mb-0-75);
+}
+
+.contact_title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+}
+
+.contact_subtitle {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.contact_content {
+  background-color: var(--input-color);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem 0.25rem;
+}
+
+.contact_label {
+  font-size: var(--smaller-font-size);
+  color: var(--title-color);
+}
+
+.contact_input {
+  width: 100%;
+  background-color: var(--input-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  border: none;
+  outline: none;
+  padding: 0.25rem 0.5rem 0.5rem 0;
+}
 
 /*==================== FOOTER ====================*/
+.footer {
+  padding-top: 2rem;
+}
 
+.footer_container {
+  row-gap: 3.5rem;
+}
+
+.footer_bg {
+  background-color: var(--first-color-second);
+  padding: 2rem 0 3rem;
+}
+
+.footer_title {
+  font-size: var(--h1-font-size);
+  margin-bottom: var(--mb-0-25);
+}
+
+.footer_subtitle {
+  font-size: var(--small-font-size);
+}
+
+.footer_links {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.footer_link:hover {
+  color: var(--first-color-lighter);
+}
+
+.footer_social {
+  font-size: 1.2rem;
+  margin-right: var(--mb-1-5);
+}
+
+.footer_social:hover {
+  color: var(--first-color-lighter);
+}
+
+.footer_copy {
+  font-size: var(--smaller-font-size);
+  text-align: center;
+  color: var(--text-color-light);
+  margin-top: var(--mb-3);
+}
+
+.footer_title, .footer_subtitle, .footer_link, .footer_social {
+  color: #FFFFFF;
+}
 
 /*========== SCROLL UP ==========*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  background-color: var(--first-color);
+  opacity: 0.8;
+  padding: 0 0.3rem;
+  border-radius: 0.4rem;
+  z-index: var(--z-tooltip);
+  transition: 0.4s;
+}
 
+.scrollup:hover {
+  background-color: var(--first-color-alt);
+}
+
+.scrollup_icon {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
 
 /* Show scroll */
-
+.show-scroll {
+  bottom: 4rem;
+}
 
 /*========== SCROLL BAR ==========*/
 
