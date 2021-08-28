@@ -71,29 +71,6 @@ tabs.forEach(tab => {
   });
 });
 
-/*==================== SERVICES MODAL ====================*/
-const modalViews = document.querySelectorAll('.services_modal'),
-      modalBtns = document.querySelectorAll('.services_button'),
-      modalCloses = document.querySelectorAll('.services_modal-close');
-
-let modal = function(modalClick) {
-  modalViews[modalClick].classList.add('active-modal');
-}
-
-modalBtns.forEach((modalBtn, i) => {
-  modalBtn.addEventListener('click', () => {
-    modal(i);
-  });
-});
-
-modalCloses.forEach((modalClose) => {
-  modalClose.addEventListener('click', () => {
-    modalViews.forEach((modalView) => {
-      modalView.classList.remove('active-modal');
-    });
-  });
-});
-
 /*==================== PORTFOLIO SWIPER  ====================*/
 let swiperPortfolio = new Swiper('.portfolio_container', {
   cssMode: true,
@@ -105,23 +82,6 @@ let swiperPortfolio = new Swiper('.portfolio_container', {
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
-  },
-});
-
-/*==================== TESTIMONIAL ====================*/
-let swiperTestimonial = new Swiper('.testimonial_container', {
-  loop: true,
-  grabCursor: true,
-  spaceBetween: 48,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-    dynamicBullets: true,
-  },
-  breakpoints: {
-    568: {
-      slidesPerView: 2,
-    },
   },
 });
 
